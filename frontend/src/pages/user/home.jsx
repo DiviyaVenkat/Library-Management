@@ -80,26 +80,7 @@ export default function Home() {
 
   return (
     <div className="library-homepage">
- 
-      <header className="hero-section">
-        <div className="hero-overlay"></div>
-        <div className="container hero-content">
-          <h1 className="hero-title">Welcome to College Central Library</h1>
-          <p className="hero-subtitle">Access academic resources, textbooks, and research materials</p>
-          
-          
-          
-          <div className="hero-buttons">
-            <Link to="/books" className="btn btn-primary">
-            <FiBook size={18} className="mr-2" />
-              Browse collections 
-            </Link>
-          
-          </div>
-        </div>
-      </header>
 
-     
       <section className="stats-section">
         <div className="container">
           <div className="stats-grid">
@@ -187,7 +168,7 @@ export default function Home() {
 </section>
 
       
-      <section className="hours-section">
+      {/* <section className="hours-section">
         <div className="container">
           <h2 className="section-title">Library Hours</h2>
           <div className="hours-grid">
@@ -205,7 +186,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

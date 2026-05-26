@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import AdminNavbar from "../components/adminnavbar";
-import AdminFooter from "../components/AdminFooter";
 import { ToastContainer } from 'react-toastify';
 
 export default function adminLayout() {
@@ -25,7 +24,7 @@ export default function adminLayout() {
 
     {render ? <><AdminNavbar />
           <Outlet />
-          <AdminFooter /></> :
+          </> :
           null
           }
           <ToastContainer

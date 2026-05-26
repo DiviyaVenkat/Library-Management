@@ -70,8 +70,6 @@ function App() {
           <Route path='/category' element={<AllCategories/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/aboutus" element={<AboutUs/>}/>
-          <Route path="/contactus" element={<ContactUs/>}/>
           <Route path="/forgetPassword" element={<ForgotPassword/>}/>
           <Route path="/verifyotp" element={<VerifyOTP/>}/>
           <Route path="/resetpass" element={<ResetPassword/>}/>

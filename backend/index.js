@@ -11,7 +11,7 @@ const home = require("./routes/home.js")
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://library-management-app-karan.vercel.app",
+  "http://localhost:3000",
 ];
 
 app.use(express.json()); // Parse JSON
@@ -38,9 +38,22 @@ app.get("/", (req, res) => {
   const PORT = process.env.PORT || 5000;
 const uri = process.env.MONGO_URI;
 
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`)
-     mongoose.connect(uri);
-     
-     console.log("DB Connected")
+if (!uri || uri === 'your_mongodb_connection_string') {
+  console.error('Missing or invalid MONGO_URI in .env. Set MONGO_URI to a valid MongoDB connection string.');
+  process.exit(1);
+}
+
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => {
+    console.log('DB Connected');
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('MongoDB connection failed:', err.message);
+    process.exit(1);
   });
