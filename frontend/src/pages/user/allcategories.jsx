@@ -17,7 +17,7 @@ export default function ViewAllCategories() {
     try {
       const url = Server_URL + "books";
       const response = await axios.get(url);
-      const { error, message, books } = response.data;
+      const { error, message, books = [] } = response.data || {};
 
       if (error) {
         showErrorToast(message);
@@ -26,10 +26,12 @@ export default function ViewAllCategories() {
         setFilteredBooks(books);
 
         const categoryCountMap = {};
-        books.forEach((book) => {
-          const cat = book.category;
-          categoryCountMap[cat] = (categoryCountMap[cat] || 0) + 1;
-        });
+        if (Array.isArray(books)) {
+  books.forEach((book) => {
+    const cat = book?.category || "Unknown";
+    categoryCountMap[cat] = (categoryCountMap[cat] || 0) + 1;
+  });
+}
 
         setCategoryCounts(categoryCountMap);
       }
@@ -72,7 +74,7 @@ export default function ViewAllCategories() {
             >
               All
             </li>
-            {[...new Set(books.map((book) => book.category))].map(
+            {[...new Set((books || []).map((book) => book?.category))].map(
               (category, index) => (
                 <li
                   key={index}
@@ -95,15 +97,13 @@ export default function ViewAllCategories() {
             <Loader />
           ) : filterBooks.length > 0 ? (
             <div className="all-categories-grid">
-              {[...new Set(filterBooks.map((book) => book.category))].map(
+              {[...new Set((filterBooks || []).map((book) => book?.category))].map(
                 (category, index) => (
                   <div key={index} className="all-categories-card-wrapper">
                     <div className="all-categories-card shadow-sm">
                       <img
                         src={
-                          filterBooks.find(
-                            (b) => b.category === category
-                          )?.coverImage
+                          filterBooks?.find((b) => b?.category === category)?.coverImage
                         }
                         className="all-categories-card-img"
                         alt={category}
