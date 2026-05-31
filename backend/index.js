@@ -43,7 +43,7 @@ if (!uri || uri === 'your_mongodb_connection_string') {
   process.exit(1);
 }
 
-mongoose.connect(uri)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("DB Connected");
 
@@ -53,6 +53,4 @@ mongoose.connect(uri)
   })
   .catch((err) => {
     console.error("MongoDB connection failed:", err.message);
-    process.exit(1);
   });
-  
