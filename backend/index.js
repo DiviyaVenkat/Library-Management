@@ -43,10 +43,18 @@ if (!uri || uri === 'your_mongodb_connection_string') {
   process.exit(1);
 }
 
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(uri)
+  .then(() => {
+    console.log("DB Connected");
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB connection failed:", err.message);
+    process.exit(1);
+  });
   .then(() => {
     console.log('DB Connected');
     app.listen(PORT, () => {
