@@ -14,13 +14,9 @@ const allowedOrigins = [
   "https://library-management-ytl3.vercel.app/",
 ];
 
+console.log("CORS CONFIG LOADED");
 app.use(express.json()); // Parse JSON
-app.use(
-  cors({
-    origin: allowedOrigins,
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use("/users",users);
 app.use("/books",books);
 app.use("/admin",admin);
