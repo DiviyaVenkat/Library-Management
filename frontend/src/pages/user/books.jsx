@@ -4,6 +4,7 @@ import "./books.css"
 import { useNavigate } from "react-router-dom";
 import { Server_URL } from "../../utils/config";
 import { showErrorToast, showSuccessToast } from "../../utils/toasthelper";
+import noBooksImage from "../../assets/no-content.png";
 
 
 const Books = () => {
@@ -183,7 +184,8 @@ const Books = () => {
           ) : (
             <div className="no-books-found">
               <i className="bi bi-book-slash"></i>
-              <h4>No books found!</h4>
+              <img src={noBooksImage} alt="No Books" className="no-books-image" style={{ maxWidth: "100%", height: "55px", marginbottom: "19px" }} />
+              <h4 style={{ textTransform: "capitalize", fontWeight: "600" }}>No books found!</h4>
               <p>Try adjusting your search or category filter</p>
             </div>
           )}

@@ -85,8 +85,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <h2>Categories</h2>
+      <section className="categories-section">
+        <h2 className="dashboard-title">Categories</h2>
 
         {categories.length === 0 ? (
           <p>No categories found.</p>
@@ -100,8 +100,8 @@ export default function Home() {
         )}
       </section>
 
-      <section>
-        <h2>New Arrivals</h2>
+      <section className="new-arrivals-section">
+        <h2 className="dashboard-title">New Arrivals</h2>
 
         {newArrivals.length === 0 ? (
           <p>No books found.</p>

@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import {Link,useNavigate} from "react-router-dom";
+import logo from "../assets/library-logo.png"
 export default function Navbar(){
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function Navbar(){
     <div className="container">
       
       <Link className="navbar-brand fw-bold" to="/">
-        📚 AGC Library
+        <img src={logo} alt="Library Logo" className="img-fluid" style={{ maxHeight: "31px" }} />
       </Link>
 
       
@@ -74,10 +75,10 @@ export default function Navbar(){
           ) : (
             <>
               <li className="nav-item">
-                <Link className="btn btn-light me-2" to="/login">Login</Link>
+                <Link className="btn btn-light me-2 login-btn common-btn" to="/login">Login</Link>
               </li>
               <li className="nav-item">
-                <Link className="btn btn-outline-light" to="/register">Signup</Link>
+                <Link className="btn btn-outline-light signup-btn common-btn" to="/register">Signup</Link>
               </li>
             </>
           )}
