@@ -11,6 +11,7 @@ const home = require("./routes/home.js")
 
 const allowedOrigins = [
   "http://localhost:5173",
+  "http://localhost:3000",
   "https://library-management-ytl3.vercel.app/",
 ];
 

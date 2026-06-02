@@ -13,7 +13,7 @@ export default function Navbar(){
 
 
     return(
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <nav className="navbar navbar-expand-lg navbar-dark">
     <div className="container">
       
       <Link className="navbar-brand fw-bold" to="/">
@@ -33,7 +33,7 @@ export default function Navbar(){
       <div className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}>
         <ul className="navbar-nav me-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/">Dashboard</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/books">Books</Link>
@@ -41,12 +41,11 @@ export default function Navbar(){
           <li className="nav-item">
             <Link className="nav-link" to="/category">Category</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/aboutus">About</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/contactus">Contact</Link>
-          </li>
+          {token && (
+            <li className="nav-item">
+              <Link className="nav-link" to="/wishlist">Wishlist</Link>
+            </li>
+          )}
         </ul>
 
     

@@ -2,6 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Server_URL } from "../../utils/config";
 import Preloader from "../../components/Preloader";
+import categoryImage from "../../assets/category.png";
+import booksImage from "../../assets/book.png";
+import studentsImage from "../../assets/students.png"
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
@@ -64,17 +67,17 @@ export default function Home() {
           <div className="stats-grid">
 
             <div className="stat-cardhome">
-              <h3>{stats?.totalCategories || 0}+</h3>
+              <h3><span className="dashboad-icon"><img src={categoryImage} alt="Category" /></span>{stats?.totalCategories || 0}+</h3>
               <p>Total Categories</p>
             </div>
 
             <div className="stat-cardhome">
-              <h3>{stats?.totalBooks || 0}+</h3>
+              <h3><span className="dashboad-icon"><img src={booksImage} alt="Book" /></span>{stats?.totalBooks || 0}+</h3>
               <p>Total Books</p>
             </div>
 
             <div className="stat-cardhome">
-              <h3>{stats?.totalActiveStudents || 0}</h3>
+              <h3><span className="dashboad-icon"><img src={studentsImage} alt="Student" /></span>{stats?.totalActiveStudents || 0}</h3>
               <p>Active Students</p>
             </div>
 
