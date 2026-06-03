@@ -18,14 +18,14 @@
 }
 
 .sidebar h4 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--secondary-color);
-  margin-bottom: 25px;
-  text-transform: uppercase;
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 8px;
-  letter-spacing: 0.6px;
+      font-size: 18px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+    letter-spacing: .6px;
 }
 
 
@@ -53,14 +53,14 @@
 }
 
 .category-item:hover {
-  background-color: #e2e6ea;
-  transform: translateX(6px);
-  color: #0d6efd;
-  box-shadow: inset 0 0 0 2px #0d6efd;
+      background-color: var(--secondary-color);
+    transform: translate(6px);
+    color: white;
+    box-shadow: inset 0 0 0 1px #dee1e1;
 }
 
 .category-item.active {
-  background-color: #0d6efd;
+  background-color: var(--primary-color);
   color: #ffffff;
   font-weight: 600;
   box-shadow: none;
@@ -154,7 +154,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: rgba(13, 110, 253, 0.9);
+  background-color: var(--primary-color);
   color: white;
   padding: 3px 8px;
   border-radius: 4px;
@@ -195,7 +195,7 @@
 
 .card-price {
   font-weight: 700;
-  color: #28a745;
+  color: var(--secondary-color);
 }
 
 .card-actions {

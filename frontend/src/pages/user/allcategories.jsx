@@ -5,6 +5,7 @@ import "./allcategories.css";
 import { Link } from "react-router-dom";
 import Loader from "../../components/Preloader";
 import { showErrorToast, showSuccessToast } from "../../utils/toasthelper";
+import noBooksImage from "../../assets/no-content.png";
 
 export default function ViewAllCategories() {
   const [books, setBooks] = useState([]);
@@ -131,6 +132,7 @@ export default function ViewAllCategories() {
             </div>
           ) : (
             <div className="all-categories-empty">
+              <img src={noBooksImage} alt="No Books" className="no-books-image" style={{ maxWidth: "100%", height: "55px", marginbottom: "19px" }} />
               <p>No books found in this category.</p>
             </div>
           )}

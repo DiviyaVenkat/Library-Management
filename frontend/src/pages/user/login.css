@@ -7,10 +7,10 @@
   }
   
   .login-box {
-    background: #fff;
+    /* background: #fff; */
     padding: 30px 35px;
     border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    /* box-shadow: 0 4px 16px rgba(0,0,0,0.1); */
     width: 100%;
     max-width: 400px;
   }
@@ -35,11 +35,12 @@
   }
   
   .form-input {
-    width: 100%;
-    padding: 10px 12px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+        width: 100%;
+    padding: 9px 12px;
+    border-radius: 10px;
+    border: 1px solid #cccccce3;
     font-size: 15px;
+    box-shadow: inset 0px 4px 9px 0px #00000024;
   }
   
   .error-text {
@@ -58,7 +59,7 @@
   .forgot-btn {
     background: none;
     border: none;
-    color: #007bff;
+    color: var(--secondary-color);
     cursor: pointer;
     font-size: 14px;
     text-decoration: underline;
@@ -66,22 +67,43 @@
   
   .forgot-btn:hover {
     text-decoration: none;
-    color: #0056b3;
+    color: var(--secondary-color);
   }
   
   .btn-submit {
     width: 100%;
     padding: 10px;
-    background: #007bff;
+    background: var(--primary-color);
     color: white;
     border: none;
     border-radius: 5px;
-    font-weight: bold;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
+    text-transform: uppercase;
+     box-shadow: 0px 4px 9px 0px #00000024;
+     letter-spacing: 1px;
   }
   
   .btn-submit:hover {
-    background-color: #0056b3;
+    background-color: var(--secondary-color);
   }
   
+
+  .login-image img {
+    height: 411px;
+    object-position: center;
+    object-fit: contain;
+}
+
+.login-image {
+    text-align: center;
+}
+
+.login-container .row {
+    padding: 55px;
+    background: white;
+    box-shadow: 0px 0px 20px 0px #0000000a;
+    width: 81%;
+    margin: auto;
+}
