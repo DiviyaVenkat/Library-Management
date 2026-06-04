@@ -3,6 +3,7 @@ import {useForm} from "react-hook-form";
 import axios from "axios";
 import { Server_URL } from "../../utils/config";
 import { showErrorToast, showSuccessToast } from "../../utils/toasthelper";
+import registerImage from "../../assets/register.png";
 
 
 export default function Register(){
@@ -27,10 +28,15 @@ export default function Register(){
     };
     return(
         <div className="container mt-4">
-        <h2 className="text-center">User Registration</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="p-4 border rounded shadow">
-  
-      
+        <div className="row register-row justify-content-center">
+          <div className="col-md-6">
+            <div className="card">
+              <img src={registerImage} className="card-img-top" alt="Register" />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="p-4 border rounded shadow">
+          <h2 className="text-center user-register-title">User Registration</h2>
           <div className="mb-3">
             <label className="form-label">Name</label>
             <input type="text" className="form-control" {...register("name", { required: "Name is required" })} />
@@ -65,8 +71,10 @@ export default function Register(){
           </div>
   
     
-          <button type="submit" className="btn btn-primary w-100">Register</button>
+          <button type="submit" className="register-btn w-100">Register</button>
         </form>
+          </div>
+        </div>
       </div>
     )
 }

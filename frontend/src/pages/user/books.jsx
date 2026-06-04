@@ -164,13 +164,13 @@ const Books = () => {
                       <span className="card-price">₹{book.price}</span>
                       <div className="card-actions">
                         <button
-                          className="btn btn-outline-primary btn-sm"
+                          className="books-card-btn"
                           onClick={() => bookDetails(book._id)}
                         >
                           Details
                         </button>
                         <button
-                          className="btn btn-primary btn-sm"
+                          className="books-card-btn issue-btn"
                           onClick={() => issueBook(book._id)}
                         >
                           Issue
