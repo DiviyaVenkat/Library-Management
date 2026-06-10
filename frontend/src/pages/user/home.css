@@ -580,6 +580,31 @@ body {
   font-size: 0.9rem;
 }
 
+.categories-section div {
+    display: inline-block;
+    width: 23%;
+    background: white;
+    margin: 15px 8px;
+    padding: 17px 17px 7px;
+    box-shadow: 0 0 29px #0000001c;
+    border-radius: 6px;
+}
+
+.categories-section div h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.categories-section div p {
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    background: var(--secondary-color);
+    border-radius: 100px;
+    padding: 4px 15px;
+    color: white;
+}
+
 
 @media (max-width: 768px) {
   .hero-title {

@@ -7,7 +7,7 @@
 
 body{
       overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: scroll;
     height: 100vh;
     background: #f4f4f4;
 }
@@ -106,8 +106,7 @@ h2.dashboard-title {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
-  background: linear-gradient(
-91deg, #1d423f 41%, transparent);
+  background: linear-gradient(91deg, #59b2ab 41%, transparent);
 padding: 6px 10px;
 width: 26%;
 color: white;

@@ -4,6 +4,10 @@ import { Pie } from "react-chartjs-2";
 import "chart.js/auto";
 import { Server_URL } from "../../utils/config";
 import "./AdminDashboard.css";
+import bookIcon from "../../assets/books.png";
+import userIcon from "../../assets/user.png";
+import librarianIcon from "../../assets/librarian.png";
+import dashboard from "../../assets/dashboard.png";
 
 const AdminDashboard = () => {
   const [selectedSection, setSelectedSection] = useState("dashboard");
@@ -151,7 +155,7 @@ const AdminDashboard = () => {
                 }`}
                 onClick={() => handleSectionChange("dashboard")}
               >
-                📊 Dashboard
+                <img src={dashboard} alt="Dashboard" /> Dashboard
               </button>
             </li>
             <li className="admin-nav-item">
@@ -161,7 +165,7 @@ const AdminDashboard = () => {
                 }`}
                 onClick={() => handleSectionChange("users")}
               >
-                👥 Users
+                <img src={userIcon} alt="Users" /> Users
               </button>
             </li>
             {role === "admin" && (
@@ -172,7 +176,7 @@ const AdminDashboard = () => {
                   }`}
                   onClick={() => handleSectionChange("librarians")}
                 >
-                  📚 Librarians
+                  <img src={librarianIcon} alt="Librarians" /> Librarians
                 </button>
               </li>
             )}
@@ -183,7 +187,7 @@ const AdminDashboard = () => {
                 }`}
                 onClick={() => handleSectionChange("books")}
               >
-                📖 Books
+                <img src={bookIcon} alt="Books" /> Books
               </button>
             </li>
           </ul>
@@ -192,7 +196,7 @@ const AdminDashboard = () => {
         <main className="col-md-9 col-lg-10 admin-main">
           {selectedSection === "dashboard" && (
             <>
-              <h2 className="admin-section-title">📊 Dashboard Overview</h2>
+              <h2 className="admin-section-title"><img src={dashboard} alt="Dashboard" /> Dashboard Overview</h2>
 
               <div className="stats-grid">
                 <div className="stat-card books">
@@ -270,7 +274,7 @@ const AdminDashboard = () => {
 
           {selectedSection === "users" && (
             <>
-              <h2 className="admin-section-title">👥 Users Management</h2>
+              <h2 className="admin-section-title"><img src={userIcon} alt="Users" /> Users Management</h2>
               <div className="admin-table-container">
                 <table className="admin-table">
                   <thead>
@@ -298,7 +302,7 @@ const AdminDashboard = () => {
 
           {selectedSection === "librarians" && (
             <>
-              <h2 className="admin-section-title">📚 Librarians Management</h2>
+              <h2 className="admin-section-title"><img src={librarianIcon} alt="Librarians" /> Librarians Management</h2>
               <div className="admin-table-container">
                 <table className="admin-table">
                   <thead>
@@ -326,7 +330,7 @@ const AdminDashboard = () => {
 
           {selectedSection === "books" && (
             <>
-              <h2 className="admin-section-title">📖 Books Inventory</h2>
+              <h2 className="admin-section-title"><img src={bookIcon} alt="Books" /> Books Inventory</h2>
               <div className="admin-table-container">
                 <table className="admin-table">
                   <thead>

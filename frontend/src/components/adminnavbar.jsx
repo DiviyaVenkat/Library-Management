@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import {Link,useNavigate} from "react-router-dom";
 import "./adminnavbar.css"
+import logo from "../assets/library-logo.png"
 export default function AdminNavbar(){
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -19,9 +20,9 @@ export default function AdminNavbar(){
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow">
     <div className="container">
      
-      <Link className="navbar-brand fw-bold" to="/admin">
-        📚 AGC Library
-      </Link>
+      <Link className="navbar-brand fw-bold" to="/">
+              <img src={logo} alt="Library Logo" className="img-fluid" style={{ maxHeight: "31px" }} />
+            </Link>
 
     
       <button
