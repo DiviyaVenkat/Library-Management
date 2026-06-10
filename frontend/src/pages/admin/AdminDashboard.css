@@ -115,7 +115,7 @@
 
 .stat-card {
   background-color: white;
-  border-radius: 12px;
+  border-radius: 7px;
   padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
@@ -168,7 +168,7 @@
 
 .progress-card {
   background-color: white;
-  border-radius: 12px;
+  border-radius: 7px;
   padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
@@ -189,7 +189,7 @@
 .progress-bar {
   height: 100%;
   border-radius: 5px;
-  background: linear-gradient(90deg, #3498db, #9b59b6);
+  background: linear-gradient(90deg, #ffc107, #1d413d);
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -209,7 +209,7 @@
 
 .chart-card, .activity-card {
   background-color: white;
-  border-radius: 12px;
+  border-radius: 7px;
   padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   height: 100%;
@@ -219,12 +219,13 @@
   color: #2c3e50;
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
 
 .admin-table-container {
   background-color: white;
-  border-radius: 12px;
+  border-radius: 7px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
@@ -235,12 +236,12 @@
 }
 
 .admin-table thead {
-  background: linear-gradient(90deg, #3498db, #2980b9);
+  background: linear-gradient(90deg, #0e2a27, #071715);
   color: white;
 }
 
 .admin-table th {
-  color: black;
+  color: white;
   padding: 1rem;
   text-align: left;
   font-weight: 500;
@@ -263,6 +264,14 @@
 .activity-item {
     display: flex;
     padding: 10px 0px;
+}
+.admin-nav-btn img {
+    height: 24px;
+}
+
+.admin-section-title img {
+    height: 34px;
+    filter: brightness(0);
 }
 
 

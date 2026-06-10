@@ -17,7 +17,7 @@ export default function AdminNavbar(){
 
 
     return(
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <nav className="navbar navbar-expand-lg navbar-dark">
     <div className="container">
      
       <Link className="navbar-brand fw-bold" to="/">
