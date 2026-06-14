@@ -101,7 +101,7 @@ ul.navbar-nav {
 section.categories-section, section.new-arrivals-section {padding: 24px 5%;}
 
 h2.dashboard-title {
-  display: inline-block;
+  display: block;
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -142,7 +142,7 @@ border-radius: 6px;
     letter-spacing: 1px;
     font-weight: 600;
     font-size: 14px;
-    background: #e38a0030;
+    background: #0000000e;
     display: inline-block;
     padding: 2px 12px;
     border-radius: 100px;
