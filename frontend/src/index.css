@@ -119,3 +119,41 @@ border-radius: 6px;
     font-weight: 700;
     border-radius: 4px;
 }
+
+.category-card, .book-card {
+    width: 23%;
+    display: inline-block;
+    padding: 15px 11px;
+    background: white;
+    margin: 10px 9px;
+    text-align: center;
+    box-shadow: 0 0 29px #0000001c;
+    border-radius: 9px;
+}
+
+.category-card h3, .book-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.category-card p, .book-card p {
+    margin: 0px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 14px;
+    background: #e38a0030;
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 100px;
+}
+
+ul.navbar-nav .btn {
+    background: transparent;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 7px 14px;
+}
