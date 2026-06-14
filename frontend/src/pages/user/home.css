@@ -605,7 +605,20 @@ body {
     color: white;
 }
 
+button.register-btn {
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border: 0px;
+}
 
+.register-img{
+    height: 520px;
+    object-fit: contain;
+}
 
 
 @media (max-width: 768px) {
