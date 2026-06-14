@@ -120,7 +120,7 @@ border-radius: 6px;
     border-radius: 4px;
 }
 
-.category-card, .book-card {
+.category-card, .allbook-card {
         width: 15%;
     display: inline-block;
     padding: 15px 11px;
@@ -131,12 +131,12 @@ border-radius: 6px;
     border-radius: 9px;
 }
 
-.category-card h3, .book-card h3 {
+.category-card h3, .allbook-card h3 {
     font-size: 17px;
     font-weight: 700;
 }
 
-.category-card p, .book-card p {
+.category-card p, .allbook-card p {
         margin: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -156,4 +156,11 @@ ul.navbar-nav .btn {
     font-size: 14px;
     letter-spacing: 2px;
     padding: 7px 14px;
+}
+
+button.books-card-btn {
+    border: 0px;
+    background: var(--primary-color);
+    padding: 2px 4px;
+    color: white;
 }
