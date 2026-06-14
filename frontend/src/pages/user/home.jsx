@@ -107,7 +107,7 @@ export default function Home() {
           <p>No books found.</p>
         ) : (
           newArrivals.map((book) => (
-            <div key={book._id} className="book-card">
+            <div key={book._id} className="homebook-card">
               <h3>{book.title}</h3>
               <p>{book.author}</p>
             </div>

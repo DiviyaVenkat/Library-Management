@@ -43,11 +43,6 @@ export default function Navbar(){
           <li className="nav-item">
             <Link className="nav-link" to="/category">Category</Link>
           </li>
-          {token && (
-            <li className="nav-item">
-              <Link className="nav-link" to="/wishlist">Wishlist</Link>
-            </li>
-          )}
         </ul>
 
     
