@@ -8,7 +8,7 @@ const BookSchema = new Schema({
     description: { type: String, required: true },
     availableCopies: { type: Number, required: true },
     totalCopies: { type: Number, required: true },
-    addedBy: { type: String, ref: 'User',required: true },
+    addedBy: { type: Schema.Types.ObjectId, ref: 'User',required: true },
     coverImage: { type: String },
     cloudinaryId: { type: String, required: true },
     price: {type:Number},
