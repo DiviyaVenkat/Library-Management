@@ -8,7 +8,7 @@
 .admin-sidebar {
   background: linear-gradient(180deg, #0f2d2a, #061413);
   color: white;
-  padding: 2rem 1.5rem;
+  padding: 2rem 0rem;
   min-height: 100vh;
   position: sticky;
   top: 0;
@@ -73,10 +73,10 @@
 }
 
 .admin-nav-btn.active {
-  background-color: rgba(52, 152, 219, 0.2);
-  color: white;
-  font-weight: 500;
-  box-shadow: inset 3px 0 0 #3498db;
+    background-color: #ffffff0f;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: inset 3px 0 var(--secondary-color);
 }
 
 
@@ -152,7 +152,7 @@
 }
 
 .stat-card p {
-  color: #2c3e50;
+  color: #000;
   font-size: 2rem;
   font-weight: 700;
   margin: 0;

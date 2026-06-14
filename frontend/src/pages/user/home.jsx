@@ -92,7 +92,7 @@ export default function Home() {
           <p>No categories found.</p>
         ) : (
           categories.map((cat, index) => (
-            <div key={index}>
+            <div key={index} className="category-card">
               <h3>{cat.category}</h3>
               <p>Books: {cat.count}</p>
             </div>
@@ -107,7 +107,7 @@ export default function Home() {
           <p>No books found.</p>
         ) : (
           newArrivals.map((book) => (
-            <div key={book._id}>
+            <div key={book._id} className="book-card">
               <h3>{book.title}</h3>
               <p>{book.author}</p>
             </div>

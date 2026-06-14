@@ -105,9 +105,9 @@ const ViewBooks = () => {
             <div className="card-body">
               <h5 className="card-title">{book.title}</h5>
               <p className="book-author">{book.author}</p>
-              <p className="book-category">📚 {book.category}</p>
-              <p className="book-isbn">🔢 ISBN: {book.isbn}</p>
-              <p className="book-price">💰 ₹{book.price}</p>
+              <p className="book-category">{book.category}</p>
+              <p className="book-isbn">ISBN: {book.isbn}</p>
+              <p className="book-price">₹{book.price}</p>
             </div>
             <div className="card-footer text-center">
               <button className="btn edit-btn me-2" onClick={() => handleEdit(book)}>
@@ -137,7 +137,7 @@ const ViewBooks = () => {
   <div className="modal d-block" tabIndex="-1">
     <div className="modal-dialog modal-dialog-centered modal-lg"> {/* Centered and Larger Modal */}
       <div className="modal-content shadow-lg rounded-3"> {/* Added Shadow & Rounded Corners */}
-        <div className="modal-header bg-primary text-white">
+        <div className="modal-header text-white" style={{ backgroundColor: "var(--primary-color)" }}> {/* Primary Color Header */}
           <h5 className="modal-title">Edit Book</h5>
           <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
         </div>

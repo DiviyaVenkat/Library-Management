@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import {Link,useNavigate} from "react-router-dom";
 import logo from "../assets/library-logo.png"
+import profile from "../assets/profile.png"
 export default function Navbar(){
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -58,7 +59,7 @@ export default function Navbar(){
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                👤 Profile
+                 <img src={profile} alt="Profile" className="img-fluid" style={{ maxHeight: "20px" }} />Profile
               </button>
               <ul className="dropdown-menu dropdown-menu-end">
                 <li>
