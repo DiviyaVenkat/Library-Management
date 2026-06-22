@@ -114,14 +114,6 @@ userController.addContact = async(req,res) => {
 
 }
 
-transporter.verify(function (error, success) {
-  if (error) {
-    console.log("SMTP ERROR:", error);
-  } else {
-    console.log("SMTP Server is ready");
-  }
-});
-
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
@@ -133,6 +125,14 @@ const transporter = nodemailer.createTransport({
   connectionTimeout: 30000,
 });
 
+
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log("SMTP ERROR:", error);
+  } else {
+    console.log("SMTP Server is ready");
+  }
+});
 
 
 userController.forgotPassword = async (req, res) => {
