@@ -7,11 +7,11 @@ import booksImage from "../../assets/book.png";
 import studentsImage from "../../assets/students.png";
 import { useNavigate } from "react-router-dom";
 
-const navigate = useNavigate();
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
+  const navigate = useNavigate();
 
   const [stats, setStats] = useState({
     totalCategories: 0,
