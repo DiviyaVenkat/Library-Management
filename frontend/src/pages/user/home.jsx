@@ -4,7 +4,10 @@ import { Server_URL } from "../../utils/config";
 import Preloader from "../../components/Preloader";
 import categoryImage from "../../assets/category.png";
 import booksImage from "../../assets/book.png";
-import studentsImage from "../../assets/students.png"
+import studentsImage from "../../assets/students.png";
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate();
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
@@ -92,7 +95,14 @@ export default function Home() {
           <p>No categories found.</p>
         ) : (
           categories.map((cat, index) => (
-            <div key={index} className="category-card">
+            <div
+              key={index}
+              className="category-card"
+              onClick={() =>
+                navigate(`/books?category=${encodeURIComponent(cat.category)}`)
+              }
+              style={{ cursor: "pointer" }}
+            >
               <h3>{cat.category}</h3>
               <p>Books: {cat.count}</p>
             </div>
@@ -107,7 +117,12 @@ export default function Home() {
           <p>No books found.</p>
         ) : (
           newArrivals.map((book) => (
-            <div key={book._id} className="homebook-card">
+            <div
+              key={book._id}
+              className="homebook-card"
+              onClick={() => navigate(`/bookdetails/${book._id}`)}
+              style={{ cursor: "pointer" }}
+            >
               <h3>{book.title}</h3>
               <p>{book.author}</p>
             </div>
