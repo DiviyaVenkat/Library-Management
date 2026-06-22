@@ -9,9 +9,10 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Home() {
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [newArrivals, setNewArrivals] = useState([]);
-  const navigate = useNavigate();
+ 
 
   const [stats, setStats] = useState({
     totalCategories: 0,
