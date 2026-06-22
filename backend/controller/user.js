@@ -123,6 +123,15 @@ const transporter = nodemailer.createTransport({
 });
 
 
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log("SMTP ERROR:", error);
+  } else {
+    console.log("SMTP Server is ready");
+  }
+});
+
+
 userController.forgotPassword = async (req, res) => {
   const { email } = req.body;
   try {
@@ -148,9 +157,13 @@ userController.forgotPassword = async (req, res) => {
 
     res.json({ message: "OTP sent to your email" });
   } catch (error) {
-    console.error("Forgot password error:", error);
-    res.status(500).json({ message: "Server error" });
-  }
+  console.error("Forgot password error:", error);
+
+  res.status(500).json({
+    message: "Server error",
+    error: error.message
+  });
+}
 };
 
 console.log("Before sendMail");
