@@ -210,8 +210,8 @@ node index.js
 ## Demo Credentials
 
 -- Librarian:
-    User Email : librarian1@gmail.com
-    Password : dhisha
+    User Email : librarian@gmail.com
+    Password : librarian
 
 -- Admin:
     User Email : admin123@gmail.com

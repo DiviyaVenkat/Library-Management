@@ -139,8 +139,10 @@ userController.forgotPassword = async (req, res) => {
       { upsert: true, new: true }
     );
 
+    console.log("Before sendMail");
+
     await transporter.sendMail({
-      from: process.env.EMAIL,
+      from: process.env.EMAIL_USER,
       to: email,
       subject: "Your OTP for Password Reset",
       html: `<p>Your OTP is <strong>${otp}</strong>. It is valid for 10 minutes.</p>`,
@@ -152,6 +154,8 @@ userController.forgotPassword = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
+console.log("Before sendMail");
 
 
 userController.verifyOTP = async (req, res) => {
