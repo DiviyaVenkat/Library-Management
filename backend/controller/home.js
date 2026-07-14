@@ -33,8 +33,9 @@ homeController.getHomeData = async (req, res) => {
     const totalCategories = await BookModel.distinct("category").then(c => c.length);
 
     const newArrivals = await BookModel.find()
-      .sort({ createdAt: -1 })
-      .limit(4)
+  .populate("addedBy", "name email role")
+  .sort({ createdAt: -1 })
+  .limit(4)
       .select("title author category coverImage");
 
     const issuedBooks = await BorrowModel.find({ status: "Issued" }).select("userId");

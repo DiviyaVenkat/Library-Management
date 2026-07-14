@@ -262,7 +262,7 @@ const AdminDashboard = () => {
                       <div key={index} className="activity-item">
                         <div className="activity-icon">📚</div>
                         <div className="activity-text">
-                          <strong>{book.title}</strong> added by {book.addedBy?.user.name} 
+                          <strong>{book.title}</strong> added by {book.addedBy?.name || "Unknown"} on {new Date(book.createdAt).toLocaleDateString()}
                         </div>
                       </div>
                     ))}
