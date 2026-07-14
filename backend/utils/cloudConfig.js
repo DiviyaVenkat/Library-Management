@@ -7,14 +7,15 @@ cloudinary.config({
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_API_SECRET,
 });
+console.log(cloudinary.config());
 
 const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-    folder: "library_books", // Folder in Cloudinary
+  cloudinary,
+  params: async (req, file) => ({
+    folder: "library_books",
     allowed_formats: ["jpg", "png", "jpeg"],
-    public_id: (req, file) => `${Date.now()}-${file.originalname}`,
-  },
+    public_id: `${Date.now()}-${file.originalname.split(".")[0]}`,
+  }),
 });
 
 const upload = multer({ storage: storage });
