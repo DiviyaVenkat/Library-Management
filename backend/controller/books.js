@@ -7,7 +7,11 @@ const { clearCache } = require("../utils/cache");
 
 
 booksController.addNewBook = async (req, res) => {
+  
   try {
+    console.log("BODY:", req.body);
+    console.log("FILE:", req.file);
+    console.log("USER:", req.userInfo);
     const {
       title,
       author,
