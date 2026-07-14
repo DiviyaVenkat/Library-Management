@@ -30,7 +30,7 @@ booksController.addNewBook = async (req, res) => {
     }
     console.log("req.file")
     console.log(req.file)
-
+    
     let coverImageUrl = req.file ? req.file.path : "";
     let cloudinaryId = req.file ? req.file.filename : "";
     console.log(coverImageUrl);
@@ -53,9 +53,15 @@ booksController.addNewBook = async (req, res) => {
     clearCache("homeData");
     res.status(201).json({error:false , message: "Book added successfully", book: newBook });
   } catch (error) {
-    console.log(error);
-    res.status(500).json({error:true, message: "Internal Server Error", error });
-  }
+  console.error("ADD BOOK ERROR");
+  console.error(error);
+
+  res.status(500).json({
+    error: true,
+    message: error.message,
+    stack: error.stack,
+  });
+}
 };
 
 booksController.getAllBooks = async (req, res) => {

@@ -50,8 +50,13 @@ const AddBookForm = () => {
       }
       
     } catch (error) {
-      console.error("Error:", error.response?.data?.message || error.message);
-      showErrorToast("Failed to add book!");
+      console.log(error.response?.data);
+      console.log(error.response?.status);
+      console.log(error.response);
+
+      showErrorToast(
+        error.response?.data?.message || "Failed to add book"
+      );
     }
   };
 
