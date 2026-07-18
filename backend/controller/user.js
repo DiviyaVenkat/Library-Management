@@ -117,14 +117,13 @@ console.log(process.env.EMAIL_USER);
 console.log(process.env.EMAIL_PASS ? "PASS FOUND" : "PASS MISSING");
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-    },
-    connectionTimeout: 30000,
+  host: "smtp-relay.brevo.com",
+  port: 587,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
 });
 
 
@@ -154,7 +153,7 @@ userController.forgotPassword = async (req, res) => {
     console.log("Before sendMail");
 
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from: '"Library Management" <librarymanagement051@gmail.com>',
       to: email,
       subject: "Your OTP for Password Reset",
       html: `<p>Your OTP is <strong>${otp}</strong>. It is valid for 10 minutes.</p>`,
