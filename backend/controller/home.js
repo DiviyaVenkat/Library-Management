@@ -37,6 +37,8 @@ homeController.getHomeData = async (req, res) => {
   .sort({ createdAt: -1 })
   .limit(4)
       .select("title author category coverImage");
+    
+      console.log(JSON.stringify(newArrivals, null, 2));
 
     const issuedBooks = await BorrowModel.find({ status: "Issued" }).select("userId");
     const activeStudents = new Set(issuedBooks.map(issue => issue.userId.toString()));

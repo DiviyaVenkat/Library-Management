@@ -65,7 +65,7 @@ export default function Register() {
 
 
             <div className="mb-3">
-              <label className="form-label">Year</label>
+              <label className="form-label">Academic Year</label>
               <input type="number" className="form-control" {...register("year", { required: "Year is required" })} />
               {errors.year && <p className="text-danger">{errors.year.message}</p>}
             </div>
