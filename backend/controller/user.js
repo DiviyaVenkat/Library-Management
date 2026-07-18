@@ -113,14 +113,18 @@ userController.addContact = async(req,res) => {
   }
 
 }
+console.log(process.env.EMAIL_USER);
+console.log(process.env.EMAIL_PASS ? "PASS FOUND" : "PASS MISSING");
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+    },
+    connectionTimeout: 30000,
 });
 
 
