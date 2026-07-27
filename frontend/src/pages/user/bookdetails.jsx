@@ -219,11 +219,13 @@ function BookDetails() {
             </div>
             
           
-           
+        <BookReviews bookId={book._id}/>
         </motion.div>
+        
     );
+    
 }
 
-<BookReviews bookId={book._id}/>
+
 
 export default BookDetails;
