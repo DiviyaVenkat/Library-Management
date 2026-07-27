@@ -2,7 +2,7 @@ const express=require("express");
 
 const router=express.Router();
 
-const {reviewController}=require("../controller/reviewController");
+const {reviewController}=require("controller/reviewcontroller");
 
 const verifyToken=require("../middleware/verifyToken");
 
