@@ -9,25 +9,56 @@ export default function BookReviews({ bookId }) {
   const [hover, setHover] = useState(0);
   const [review, setReview] = useState("");
 
+  const [average, setAverage] = useState({
+    averageRating: 0,
+    totalReviews: 0,
+  });
+
   const token = localStorage.getItem("authToken");
 
+  // Load all reviews
   const loadReviews = async () => {
     try {
       const res = await axios.get(
         `${Server_URL}reviews/${bookId}`
       );
 
-      setReviews(res.data.reviews);
+      setReviews(res.data.reviews || []);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
+  // Load average rating
+  const loadAverage = async () => {
+    try {
+      const res = await axios.get(
+        `${Server_URL}reviews/average/${bookId}`
+      );
+
+      setAverage({
+        averageRating: res.data.averageRating || 0,
+        totalReviews: res.data.totalReviews || 0,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // Load data when page opens
   useEffect(() => {
-    loadReviews();
+    if (bookId) {
+      loadReviews();
+      loadAverage();
+    }
   }, [bookId]);
 
+  // Submit review
   const submitReview = async () => {
+    if (!review.trim()) {
+      return alert("Please write a review.");
+    }
+
     try {
       const res = await axios.post(
         `${Server_URL}reviews/add`,
@@ -49,8 +80,9 @@ export default function BookReviews({ bookId }) {
       setRating(5);
 
       loadReviews();
+      loadAverage();
     } catch (err) {
-      alert(err.response?.data?.message);
+      alert(err.response?.data?.message || "Something went wrong.");
     }
   };
 
@@ -59,9 +91,12 @@ export default function BookReviews({ bookId }) {
 
       <h2>Book Reviews</h2>
 
-      <div className="rating-stars">
-        {[...Array(5)].map((star, index) => {
+      <h3>
+        ⭐ {average.averageRating.toFixed(1)} ({average.totalReviews} Reviews)
+      </h3>
 
+      <div className="rating-stars">
+        {[...Array(5)].map((_, index) => {
           const current = index + 1;
 
           return (
@@ -78,7 +113,7 @@ export default function BookReviews({ bookId }) {
               onClick={() => setRating(current)}
               style={{
                 cursor: "pointer",
-                marginRight: 5,
+                marginRight: "5px",
               }}
             />
           );
@@ -86,15 +121,17 @@ export default function BookReviews({ bookId }) {
       </div>
 
       <textarea
-        rows={4}
+        rows="4"
         placeholder="Write your review..."
         value={review}
         onChange={(e) => setReview(e.target.value)}
+        className="form-control mt-3"
       />
 
-      <br />
-
-      <button onClick={submitReview}>
+      <button
+        className="btn btn-primary mt-3"
+        onClick={submitReview}
+      >
         Submit Review
       </button>
 
@@ -107,57 +144,42 @@ export default function BookReviews({ bookId }) {
           <div
             key={item._id}
             className="review-card"
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "10px",
+              padding: "15px",
+              marginBottom: "15px",
+            }}
           >
-            <h4>{item.userId.name}</h4>
+            <h4>
+              {item.userId?.name}
 
-            <div>
+              {item.verifiedReader && (
+                <span
+                  style={{
+                    marginLeft: "10px",
+                    background: "#28a745",
+                    color: "#fff",
+                    padding: "3px 8px",
+                    borderRadius: "20px",
+                    fontSize: "12px",
+                  }}
+                >
+                  ✔ Verified Reader
+                </span>
+              )}
+            </h4>
 
+            <div style={{ marginBottom: "8px" }}>
               {[...Array(item.rating)].map((_, i) => (
-                <FaStar
-                  key={i}
-                  color="gold"
-                />
+                <FaStar key={i} color="gold" />
               ))}
-
             </div>
 
             <p>{item.review}</p>
-
           </div>
         ))
       )}
-
     </div>
   );
 }
-
-const [average, setAverage] = useState({
-    averageRating:0,
-    totalReviews:0
-});
-
-const loadAverage=async()=>{
-
-const res=await axios.get(
-`${Server_URL}reviews/average/${bookId}`
-);
-
-setAverage(res.data);
-
-}
-
-useEffect(()=>{
-
-loadReviews();
-
-loadAverage();
-
-},[bookId]);
-
-<h3>
-
-⭐ {average.averageRating?.toFixed(1)}
-
-({average.totalReviews} Reviews)
-
-</h3>
