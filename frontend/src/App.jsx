@@ -20,8 +20,6 @@ const BookDetails = lazy(() => import('./pages/user/bookdetails'));
 const ProfilePage = lazy(() => import('./pages/user/profile'));
 const LibrarianRequests = lazy(() => import('./pages/librarian/LibrarianRequest'));
 const ReturnRequest = lazy(() => import('./pages/librarian/ReturnRequest'));
-const AboutUs = lazy(() => import('./pages/user/AboutUs'));
-const ContactUs = lazy(() => import('./pages/user/ContactUs'));
 const BooksBorrowed = lazy(() => import('./pages/librarian/BooksBorrowed'));
 const ForgotPassword = lazy(() => import('./pages/user/ForgetPassword/ForgetPassword'));
 const VerifyOTP = lazy(() => import('./pages/user/ForgetPassword/VerifyOtp'));
