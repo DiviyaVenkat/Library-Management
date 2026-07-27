@@ -164,3 +164,71 @@ button.books-card-btn {
     padding: 2px 4px;
     color: white;
 }
+
+.review-section{
+
+margin-top:40px;
+
+padding:20px;
+
+background:#fff;
+
+border-radius:10px;
+
+box-shadow:0 0 10px rgba(0,0,0,.08);
+
+}
+
+.review-card{
+
+padding:15px;
+
+border-bottom:1px solid #ddd;
+
+margin-bottom:15px;
+
+}
+
+.review-card h4{
+
+margin-bottom:5px;
+
+}
+
+.review-section textarea{
+
+width:100%;
+
+padding:10px;
+
+border-radius:8px;
+
+margin-top:10px;
+
+resize:none;
+
+}
+
+.review-section button{
+
+margin-top:10px;
+
+padding:10px 20px;
+
+background:#007bff;
+
+border:none;
+
+color:#fff;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+.rating-stars{
+
+margin:15px 0;
+
+}

@@ -8,6 +8,7 @@ import { IoMdTime } from "react-icons/io";
 import { RiBookmarkLine } from "react-icons/ri";
 import "./bookdetails.css"
 import { showErrorToast, showSuccessToast } from "../../utils/toasthelper";
+import BookReviews from "../../components/BookReviews";
 
 
 function BookDetails() {
@@ -222,5 +223,7 @@ function BookDetails() {
         </motion.div>
     );
 }
+
+<BookReviews bookId={book._id}/>
 
 export default BookDetails;
