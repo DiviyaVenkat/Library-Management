@@ -15,7 +15,7 @@ const reviewRoutes=require("./routes/reviewRoutes");
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
-  "https://library-management-psi-sepia.vercel.app/category",
+  "https://library-management-psi-sepia.vercel.app/",
 ];
 
 console.log("CORS CONFIG LOADED");
